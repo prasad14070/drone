@@ -1,0 +1,730 @@
+{
+	"info": {
+		"_postman_id": "0b7ce07b-c220-4421-b5bd-c386d2715aa6",
+		"name": "flytbase",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "drones",
+			"item": [
+				{
+					"name": "register new drone",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDEyMjM5MTFiMDhmZjZjMDdlOTAyNDYiLCJuYW1lIjoiRGl2eWFuc2h1IiwiaWF0IjoxNjc4OTExOTMyfQ.mUHeXv2g24RvmW7DerErw4ifcSK_EIhhay7_lPE6IH4",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"drone_id\": \"wVQv1qs8\",\r\n    \"drone_type\": \"Real drone\",\r\n    \"make_name\": \"cloudsim\",\r\n    \"name\": \"Virtual Drone\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/drones",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"drones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modify drone",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"drone_type\": \"Real drone\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/drones/wVQv1qs6",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"drones",
+								"wVQv1qs6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete drone",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDEyMjM5MTFiMDhmZjZjMDdlOTAyNDYiLCJuYW1lIjoiRGl2eWFuc2h1IiwiaWF0IjoxNjc4OTExOTMyfQ.mUHeXv2g24RvmW7DerErw4ifcSK_EIhhay7_lPE6IH4",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/drones/64123102dbeec2e5135c37e4",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"drones",
+								"64123102dbeec2e5135c37e4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user operations",
+			"item": [
+				{
+					"name": "register user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Divyanshu\",\r\n    \"password\": \"randompass\",\r\n    \"email_id\": \"divyanshubansal.db@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/users",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get current user object",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDEyMjM5MTFiMDhmZjZjMDdlOTAyNDYiLCJuYW1lIjoiRGl2eWFuc2h1IiwiaWF0IjoxNjc4OTU1NzIwfQ.nnzx_sL7e2dCnG_qagaPgAaMaMgh-6WPg3fQw8sD8Jk",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/users/me",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email_id\": \"divyanshubansal.db@gmail.com\",\r\n    \"password\": \"randompass\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "sites",
+			"item": [
+				{
+					"name": "register new site",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDEyMjM5MTFiMDhmZjZjMDdlOTAyNDYiLCJuYW1lIjoiRGl2eWFuc2h1IiwiaWF0IjoxNjc4OTExOTMyfQ.mUHeXv2g24RvmW7DerErw4ifcSK_EIhhay7_lPE6IH4",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"site_name\": \"Hamburg\",\r\n    \"position\": {\r\n        \"latitude\": \"18.324643\",\r\n        \"longitude\": \"72.654621\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/sites",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"sites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assign a drone to site",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDEyMjM5MTFiMDhmZjZjMDdlOTAyNDYiLCJuYW1lIjoiRGl2eWFuc2h1IiwiaWF0IjoxNjc4OTExOTMyfQ.mUHeXv2g24RvmW7DerErw4ifcSK_EIhhay7_lPE6IH4",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"drone_id\": \"64133b737593dda90a46388e\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/sites/assign-drone/64133ca87593dda90a4638a1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"sites",
+								"assign-drone",
+								"64133ca87593dda90a4638a1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modify the site details",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDEyMjM5MTFiMDhmZjZjMDdlOTAyNDYiLCJuYW1lIjoiRGl2eWFuc2h1IiwiaWF0IjoxNjc4OTExOTMyfQ.mUHeXv2g24RvmW7DerErw4ifcSK_EIhhay7_lPE6IH4",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"site_name\": \"Berlin\",\r\n    \"position\": {\r\n        \"latitude\": \"18.324643\",\r\n        \"longitude\": \"72.654621\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/sites/641223aa1b08ff6c07e90249",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"sites",
+								"641223aa1b08ff6c07e90249"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a site",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDEyMjM5MTFiMDhmZjZjMDdlOTAyNDYiLCJuYW1lIjoiRGl2eWFuc2h1IiwiaWF0IjoxNjc4OTExOTMyfQ.mUHeXv2g24RvmW7DerErw4ifcSK_EIhhay7_lPE6IH4",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/sites/641223aa1b08ff6c07e90249",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"sites",
+								"641223aa1b08ff6c07e90249"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all missions present in the site",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDEyMjM5MTFiMDhmZjZjMDdlOTAyNDYiLCJuYW1lIjoiRGl2eWFuc2h1IiwiaWF0IjoxNjc4OTU1ODEwfQ.RTVFJw-I2BCQ8rrXcgiPLCH8XsloZ7RBKK2FIvXyDbI",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/sites/get-missions/641230fbdbeec2e5135c37df",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"sites",
+								"get-missions",
+								"641230fbdbeec2e5135c37df"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all drones present in the site",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDEyMjM5MTFiMDhmZjZjMDdlOTAyNDYiLCJuYW1lIjoiRGl2eWFuc2h1IiwiaWF0IjoxNjc4OTU1ODEwfQ.RTVFJw-I2BCQ8rrXcgiPLCH8XsloZ7RBKK2FIvXyDbI",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/sites/get-drones/641230fbdbeec2e5135c37df",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"sites",
+								"get-drones",
+								"641230fbdbeec2e5135c37df"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "missions",
+			"item": [
+				{
+					"name": "register mission",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDEyMjM5MTFiMDhmZjZjMDdlOTAyNDYiLCJuYW1lIjoiRGl2eWFuc2h1IiwiaWF0IjoxNjc4OTExOTMyfQ.mUHeXv2g24RvmW7DerErw4ifcSK_EIhhay7_lPE6IH4",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"alt\": 40,\r\n    \"speed\": 15,\r\n    \"name\": \"mission_1\",\r\n    \"waypoints\": [\r\n        {\r\n            \"alt\": 40,\r\n            \"lat\": 37.42987269786578,\r\n            \"lng\": -122.08320293735657\r\n        }\r\n    ],\r\n    \"site\": \"641230fbdbeec2e5135c37df\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/missions",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"missions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update a mission",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDEyMjM5MTFiMDhmZjZjMDdlOTAyNDYiLCJuYW1lIjoiRGl2eWFuc2h1IiwiaWF0IjoxNjc4OTExOTMyfQ.mUHeXv2g24RvmW7DerErw4ifcSK_EIhhay7_lPE6IH4",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"waypoints\": [\r\n        {\r\n            \"alt\": 40,\r\n            \"lat\": 37.42987269786578,\r\n            \"lng\": -122.08320293735657\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/missions/6412cdac6b9a81b8d917ccb3",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"missions",
+								"6412cdac6b9a81b8d917ccb3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a mission",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDEyMjM5MTFiMDhmZjZjMDdlOTAyNDYiLCJuYW1lIjoiRGl2eWFuc2h1IiwiaWF0IjoxNjc4OTExOTMyfQ.mUHeXv2g24RvmW7DerErw4ifcSK_EIhhay7_lPE6IH4",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/missions/6412cbe59cf83d2790811b43",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"missions",
+								"6412cbe59cf83d2790811b43"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assign a drone to mission",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDEyMjM5MTFiMDhmZjZjMDdlOTAyNDYiLCJuYW1lIjoiRGl2eWFuc2h1IiwiaWF0IjoxNjc4OTU1ODEwfQ.RTVFJw-I2BCQ8rrXcgiPLCH8XsloZ7RBKK2FIvXyDbI",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"drone_id\": \"6412d320be23db3014b74e83\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/missions/assign-drone/6412cdac6b9a81b8d917ccb3",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"missions",
+								"assign-drone",
+								"6412cdac6b9a81b8d917ccb3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add a category to a mission",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDEyMjM5MTFiMDhmZjZjMDdlOTAyNDYiLCJuYW1lIjoiRGl2eWFuc2h1IiwiaWF0IjoxNjc4OTU1ODEwfQ.RTVFJw-I2BCQ8rrXcgiPLCH8XsloZ7RBKK2FIvXyDbI",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categorie_id\": \"64132600d9835aadbcadfaec\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/missions/assign-categorie/6412cdac6b9a81b8d917ccb3",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"missions",
+								"assign-categorie",
+								"6412cdac6b9a81b8d917ccb3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "register new categorie",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDEyMjM5MTFiMDhmZjZjMDdlOTAyNDYiLCJuYW1lIjoiRGl2eWFuc2h1IiwiaWF0IjoxNjc4OTU1ODEwfQ.RTVFJw-I2BCQ8rrXcgiPLCH8XsloZ7RBKK2FIvXyDbI",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Grid\",\r\n    \"color\": \"#407BE3\",\r\n    \"tag_name\": \"test05\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/categories",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update a category",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDEyMjM5MTFiMDhmZjZjMDdlOTAyNDYiLCJuYW1lIjoiRGl2eWFuc2h1IiwiaWF0IjoxNjc4OTU1ODEwfQ.RTVFJw-I2BCQ8rrXcgiPLCH8XsloZ7RBKK2FIvXyDbI",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"color\": \"#407BE4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/categories/6413224d44578a5c690f6309",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"categories",
+								"6413224d44578a5c690f6309"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a category",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDEyMjM5MTFiMDhmZjZjMDdlOTAyNDYiLCJuYW1lIjoiRGl2eWFuc2h1IiwiaWF0IjoxNjc4OTU1ODEwfQ.RTVFJw-I2BCQ8rrXcgiPLCH8XsloZ7RBKK2FIvXyDbI",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/categories/641323cdd9835aadbcadfadf",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"categories",
+								"641323cdd9835aadbcadfadf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all missions present in the categorie",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDEyMjM5MTFiMDhmZjZjMDdlOTAyNDYiLCJuYW1lIjoiRGl2eWFuc2h1IiwiaWF0IjoxNjc4OTU1ODEwfQ.RTVFJw-I2BCQ8rrXcgiPLCH8XsloZ7RBKK2FIvXyDbI",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/categories/get-missions/64132600d9835aadbcadfaec",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"categories",
+								"get-missions",
+								"64132600d9835aadbcadfaec"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all drone in a category",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDEyMjM5MTFiMDhmZjZjMDdlOTAyNDYiLCJuYW1lIjoiRGl2eWFuc2h1IiwiaWF0IjoxNjc5MDA0MzIyfQ.HxjIeg-wRf2wu5MvNRq2w35JhHVmpWCW4in5re3EW3I",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/categories/get-drones/64132600d9835aadbcadfaec",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"categories",
+								"get-drones",
+								"64132600d9835aadbcadfaec"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
