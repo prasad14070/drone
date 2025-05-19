@@ -1,4 +1,4 @@
-# 🛸 Drone Survey Management System – FlytBase Full-Stack Assignment
+# 🛸 Drone Survey Management System – FlytBase 
 
 This repository contains my submission for the **FlytBase Full-Stack Assignment V2**. The project demonstrates a scalable system for planning, managing, and monitoring autonomous drone surveys across multiple global sites.
 
